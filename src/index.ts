@@ -16,6 +16,8 @@ import swaggerUI from "swagger-ui-express";
 import swaggerSpec from "./swagger_output.json";
 import subscribeToServerStatus from "./subscribers/serverStatusSubscriber";
 import { VerifyDiscordRequest } from "./discord/utils";
+import generateSwaggerDocs from "../scripts/swagger";
+import generateDiscordCommands from "./discord/commands";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -36,7 +38,8 @@ app.use("/admin", authAdmin, adminRouter);
 app.use("/competitions", competitionRouter);
 app.use("/status", statusRouter);
 
-// Subscribers
+generateSwaggerDocs();
+generateDiscordCommands(process.env.DISCORD_APP_ID);
 
 app.listen(PORT, () => {
   subscribeToServerStatus();

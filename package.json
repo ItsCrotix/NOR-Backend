@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node src/swagger.ts && nodemon src/index.ts",
-    "scripts": "node dist/swagger.js && node discord/commands.ts",
-    "build": "tsc && npm run scripts"
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",

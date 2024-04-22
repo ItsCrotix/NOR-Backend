@@ -9,4 +9,8 @@ const TEST_COMMAND = {
 
 const ALL_COMMANDS = [TEST_COMMAND];
 
-InstallGlobalCommands(process.env.DISCORD_APP_ID, ALL_COMMANDS);
+const generateDiscordCommands = (appId) => {
+  InstallGlobalCommands(appId, ALL_COMMANDS);
+};
+
+export default generateDiscordCommands;
