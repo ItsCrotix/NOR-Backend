@@ -1,4 +1,8 @@
-import { InteractionResponseType, InteractionType } from "discord-interactions";
+import {
+  InteractionResponseFlags,
+  InteractionResponseType,
+  InteractionType,
+} from "discord-interactions";
 import { NextFunction, Request, Response } from "express";
 import { serverStatus } from "../subscribers/serverStatusSubscriber";
 
@@ -24,6 +28,7 @@ export const DiscordInteractionHandler = async (
           ephemeral: true,
           data: {
             content: parseServerStatus(serverStatus.status),
+            flags: InteractionResponseFlags.EPHEMERAL,
           },
         });
       }
