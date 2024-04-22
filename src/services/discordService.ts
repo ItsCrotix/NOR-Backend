@@ -27,7 +27,9 @@ export const DiscordInteractionHandler = async (
           type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
           ephemeral: true,
           data: {
-            content: parseServerStatus(serverStatus.status),
+            content: `The Assetto Corsa Competizione servers are ${parseServerStatus(
+              serverStatus.status
+            )}`,
             flags: InteractionResponseFlags.EPHEMERAL,
           },
         });
@@ -41,5 +43,5 @@ export const DiscordInteractionHandler = async (
 };
 
 const parseServerStatus = (status) => {
-  return status ? "online:white_large_square:" : "offline:red_square:";
+  return status ? "online :white_large_square:" : "offline :red_square:";
 };
