@@ -951,7 +951,7 @@
         }
       }
     },
-    "/discord/interactions": {
+    "/interactions/": {
       "post": {
         "description": "",
         "responses": {

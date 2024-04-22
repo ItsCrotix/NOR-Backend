@@ -4,10 +4,6 @@ import { VerifyDiscordRequest } from "../discord/utils";
 
 const router = Router();
 
-const veryifyRequest = express.json({
-  verify: VerifyDiscordRequest(process.env.DISCORD_PUBLIC_KEY),
-});
-
-router.post("/interactions", veryifyRequest, DiscordInteractionHandler);
+router.post("/interactions", DiscordInteractionHandler);
 
 export default router;
