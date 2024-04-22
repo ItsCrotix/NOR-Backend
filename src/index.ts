@@ -16,7 +16,6 @@ import { authAdmin, authUser } from "./middleware/authMiddleware";
 import swaggerUI from "swagger-ui-express";
 import swaggerSpec from "./swagger_output.json";
 import subscribeToServerStatus from "./subscribers/serverStatusSubscriber";
-import { VerifyDiscordRequest } from "./discord/utils";
 import generateDiscordCommands from "./discord/commands";
 
 const app = express();
@@ -27,10 +26,6 @@ app.use(`/api-docs`, swaggerUI.serve, swaggerUI.setup(swaggerSpec));
 app.use(express.json());
 app.use(cors());
 app.use(cookieParser());
-
-app.use(
-  express.json({ verify: VerifyDiscordRequest(process.env.DISCORD_PUBLIC_KEY) })
-);
 
 app.use("/drivers", authUser, driverRouter);
 app.use("/results", resultsRouter);
