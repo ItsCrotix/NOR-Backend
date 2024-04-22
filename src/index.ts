@@ -38,7 +38,6 @@ app.use("/admin", authAdmin, adminRouter);
 app.use("/competitions", competitionRouter);
 app.use("/status", statusRouter);
 
-generateSwaggerDocs();
 generateDiscordCommands(process.env.DISCORD_APP_ID);
 
 app.listen(PORT, () => {

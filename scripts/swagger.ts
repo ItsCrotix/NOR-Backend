@@ -26,8 +26,4 @@ const doc = {
 const outputFile = "../src/swagger_output.json";
 const endpointsFiles = ["../src/index.ts"];
 
-const generateSwaggerDocs = () => {
-  swaggerAutogen({ openapi: "3.0.0" })(outputFile, endpointsFiles, doc);
-};
-
-export default generateSwaggerDocs;
+swaggerAutogen({ openapi: "3.0.0" })(outputFile, endpointsFiles, doc);
