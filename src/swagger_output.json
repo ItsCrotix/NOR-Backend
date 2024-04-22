@@ -12,7 +12,7 @@
     }
   ],
   "paths": {
-    "/drivers/": {
+    "/api/drivers/": {
       "get": {
         "description": "",
         "parameters": [
@@ -80,7 +80,7 @@
         }
       }
     },
-    "/drivers/{id}": {
+    "/api/drivers/{id}": {
       "get": {
         "description": "",
         "parameters": [
@@ -207,7 +207,7 @@
         }
       }
     },
-    "/drivers/{id}/results": {
+    "/api/drivers/{id}/results": {
       "get": {
         "description": "",
         "parameters": [
@@ -297,7 +297,7 @@
         }
       }
     },
-    "/drivers/{id}/competitions": {
+    "/api/drivers/{id}/competitions": {
       "post": {
         "description": "",
         "parameters": [
@@ -347,7 +347,7 @@
         }
       }
     },
-    "/results/": {
+    "/api/results/": {
       "get": {
         "description": "",
         "parameters": [
@@ -375,7 +375,7 @@
         }
       }
     },
-    "/results/{id}": {
+    "/api/results/{id}": {
       "get": {
         "description": "",
         "parameters": [
@@ -499,7 +499,7 @@
         }
       }
     },
-    "/auth/login": {
+    "/api/auth/login": {
       "post": {
         "description": "",
         "responses": {
@@ -535,7 +535,7 @@
         }
       }
     },
-    "/auth/register": {
+    "/api/auth/register": {
       "post": {
         "description": "",
         "responses": {
@@ -571,7 +571,7 @@
         }
       }
     },
-    "/auth/refresh": {
+    "/api/auth/refresh": {
       "post": {
         "description": "",
         "responses": {
@@ -584,7 +584,7 @@
         }
       }
     },
-    "/users/": {
+    "/api/users/": {
       "get": {
         "description": "",
         "parameters": [
@@ -612,7 +612,7 @@
         }
       }
     },
-    "/users/{id}": {
+    "/api/users/{id}": {
       "get": {
         "description": "",
         "parameters": [
@@ -685,7 +685,7 @@
         }
       }
     },
-    "/admin/grantAdmin": {
+    "/api/admin/grantAdmin": {
       "post": {
         "description": "",
         "responses": {
@@ -715,7 +715,7 @@
         }
       }
     },
-    "/admin/revokeAdmin": {
+    "/api/admin/revokeAdmin": {
       "post": {
         "description": "",
         "responses": {
@@ -745,7 +745,7 @@
         }
       }
     },
-    "/competitions/": {
+    "/api/competitions/": {
       "get": {
         "description": "",
         "responses": {
@@ -795,7 +795,7 @@
         }
       }
     },
-    "/competitions/{id}": {
+    "/api/competitions/{id}": {
       "get": {
         "description": "",
         "parameters": [
@@ -880,7 +880,7 @@
         }
       }
     },
-    "/competitions/{id}/drivers/": {
+    "/api/competitions/{id}/drivers/": {
       "get": {
         "description": "",
         "parameters": [
@@ -938,7 +938,7 @@
         }
       }
     },
-    "/status/": {
+    "/api/status/": {
       "get": {
         "description": "",
         "responses": {
@@ -951,7 +951,7 @@
         }
       }
     },
-    "/interactions/": {
+    "/discord/interactions": {
       "post": {
         "description": "",
         "responses": {

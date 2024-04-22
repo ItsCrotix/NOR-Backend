@@ -1,16 +1,17 @@
 import { InstallGlobalCommands } from "./utils";
 
-// Simple test command
-const TEST_COMMAND = {
-  name: "test",
-  description: "Basic command",
+const STATUS_COMMAND = {
+  name: "status",
+  description: "Check server status",
   type: 1,
 };
 
-const ALL_COMMANDS = [TEST_COMMAND];
+const ALL_COMMANDS = [STATUS_COMMAND];
 
 const generateDiscordCommands = (appId) => {
   InstallGlobalCommands(appId, ALL_COMMANDS);
 };
+
+generateDiscordCommands(process.env.DISCORD_APP_ID);
 
 export default generateDiscordCommands;
