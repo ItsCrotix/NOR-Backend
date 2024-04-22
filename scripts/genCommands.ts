@@ -2,7 +2,7 @@ import { InstallGlobalCommands } from "../src/discord/utils";
 
 const STATUS_COMMAND = {
   name: "status",
-  description: "Check server status",
+  description: "Checks the Assetto Corsa Competizione server status",
   type: 1,
 };
 

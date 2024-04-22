@@ -23,9 +23,7 @@ export const DiscordInteractionHandler = async (
           type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
           ephemeral: true,
           data: {
-            content: serverStatus
-              ? `Server is ${serverStatus.status ? "online" : "offline"}`
-              : "Server status is currently unknown",
+            content: parseServerStatus(serverStatus.status),
           },
         });
       }
@@ -35,4 +33,8 @@ export const DiscordInteractionHandler = async (
     console.error(error);
     return res.status(500).json({ message: "Internal Server Error", error });
   }
+};
+
+const parseServerStatus = (status) => {
+  return status ? "online:white_large_square:" : "offline:red_square:";
 };

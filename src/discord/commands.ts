@@ -1,8 +1,9 @@
 import { InstallGlobalCommands } from "./utils";
 
+// Simple test command
 const STATUS_COMMAND = {
   name: "status",
-  description: "Check server status",
+  description: "Check the server status",
   type: 1,
 };
 
