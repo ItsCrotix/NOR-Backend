@@ -9,6 +9,7 @@ import {
   authRouter,
   competitionRouter,
   statusRouter,
+  discordRouter,
 } from "./routes";
 import cookieParser from "cookie-parser";
 import { authAdmin, authUser } from "./middleware/authMiddleware";
@@ -36,6 +37,7 @@ app.use("/users", userRouter);
 app.use("/admin", authAdmin, adminRouter);
 app.use("/competitions", competitionRouter);
 app.use("/status", statusRouter);
+app.use("/discord", discordRouter);
 
 generateDiscordCommands(process.env.DISCORD_APP_ID);
 

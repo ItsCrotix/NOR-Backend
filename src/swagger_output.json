@@ -950,6 +950,36 @@
           }
         }
       }
+    },
+    "/discord/interactions": {
+      "post": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "example": "any"
+                  },
+                  "id": {
+                    "example": "any"
+                  },
+                  "data": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
