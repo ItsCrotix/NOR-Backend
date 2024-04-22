@@ -9,4 +9,4 @@ const TEST_COMMAND = {
 
 const ALL_COMMANDS = [TEST_COMMAND];
 
-InstallGlobalCommands(process.env.APP_ID, ALL_COMMANDS);
+InstallGlobalCommands(process.env.DISCORD_APP_ID, ALL_COMMANDS);
