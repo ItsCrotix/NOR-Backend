@@ -28,7 +28,9 @@ app.use(express.json());
 app.use(cors());
 app.use(cookieParser());
 
-app.use(express.json({ verify: VerifyDiscordRequest(process.env.PUBLIC_KEY) }));
+app.use(
+  express.json({ verify: VerifyDiscordRequest(process.env.DISCORD_PUBLIC_KEY) })
+);
 
 app.use("/drivers", authUser, driverRouter);
 app.use("/results", resultsRouter);
