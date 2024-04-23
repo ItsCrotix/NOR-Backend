@@ -47,8 +47,6 @@ discordApiRouter.use(
 
 discordApiRouter.use(discordRouter);
 
-generateDiscordCommands(process.env.DISCORD_APP_ID);
-
 app.listen(PORT, () => {
   subscribeToServerStatus();
   console.log("Server is running on port 3000");

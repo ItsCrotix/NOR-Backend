@@ -10,7 +10,8 @@
     "src/swagger-output.json",
     "src/**/*",
     "scripts/swagger.ts",
-    "src/discord/commands.ts"
+    "src/discord/commands.ts",
+    "src/test"
   ],
   "exclude": ["node_modules"],
   "lib": ["es2015"],
