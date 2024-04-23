@@ -34,7 +34,6 @@ export const getDrivers = async (
 
     res.json(response);
   } catch (err) {
-    console.log(err);
     res.status(500).send("Internal Server Error: " + err);
   }
 };
@@ -72,7 +71,6 @@ export const getDriverById = async (
 
     res.json(driverData);
   } catch (err) {
-    console.log(err);
     res.status(500).send("Internal Server Error: " + err);
   }
 };

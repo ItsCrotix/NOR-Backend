@@ -5,6 +5,8 @@ export type User = {
   created_at: string;
   updated_at: string;
   role: string;
+  tfa_enabled: boolean;
+  tfa_secret: string;
 };
 
 export type Driver = {

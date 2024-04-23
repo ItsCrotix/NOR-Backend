@@ -12,10 +12,9 @@ export const DiscordInteractionHandler = async (
   next: NextFunction
 ) => {
   try {
-    const { type, id, data } = req.body;
+    const { type, data } = req.body;
 
     if (type === InteractionType.PING) {
-      console.log("Responding to ping");
       return res.status(200).json({ type: InteractionResponseType.PONG });
     }
 

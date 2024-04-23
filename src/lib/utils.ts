@@ -1,3 +1,6 @@
+import * as crypto from "crypto";
+import { encode } from "hi-base32";
+
 import jwt, { JwtPayload, Secret } from "jsonwebtoken";
 import {
   Competition,
@@ -23,9 +26,13 @@ export async function getUserByEmail(email: string) {
 }
 
 export function createAccessToken(user: User | JwtPayload) {
-  console.log(user);
   return jwt.sign(
-    { id: user.user_id, email: user.email, role: user.role },
+    {
+      id: user.user_id,
+      email: user.email,
+      role: user.role,
+      tfa: user.tfa_enabled,
+    },
     process.env.JWT_SECRET as Secret,
     {
       expiresIn: "1h",
@@ -132,4 +139,19 @@ export const parseResultCompetition = (
     name: result.competition_name,
   };
   return response;
+};
+
+export const checkPasswordComplexity = (password: string) => {
+  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W)[a-zA-Z\d\W]{8,}$/;
+  return regex.test(password);
+};
+
+/**
+ * @description Generates a 24 character base32 secret
+ * @returns a 24 character base32 secret
+ */
+export const generateBase32Secret = () => {
+  const buffer = crypto.randomBytes(15);
+  const base32 = encode(buffer).replace(/=/g, "").substring(0, 24);
+  return base32;
 };
